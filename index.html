@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数字顺序点击游戏 - 顺序关卡模式</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background-color: #f5f5f5;
+        }
+        .game-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+            margin: 20px auto;
+            max-width: 400px;
+        }
+        .cell {
+            width: 60px;
+            height: 60px;
+            background-color: #4CAF50;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .cell:hover {
+            background-color: #45a049;
+        }
+        .cell.clicked {
+            background-color: #ff9800;
+        }
+        .info {
+            margin: 20px 0;
+            font-size: 18px;
+        }
+        .level-info {
+            font-weight: bold;
+            color: #2196F3;
+        }
+        .timer {
+            font-size: 20px;
+            color: #f44336;
+        }
+        .message {
+            font-size: 24px;
+            margin: 20px 0;
+            min-height: 30px;
+        }
+        .success {
+            color: #4CAF50;
+        }
+        .fail {
+            color: #f44336;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <h1>数字顺序点击游戏</h1>
+        <div class="info">
+            <span class="level-info">当前关卡: <span id="current-level">1</span></span>
+            <span class="timer">时间: <span id="time">0</span>秒</span>
+        </div>
+        <div class="message" id="message"></div>
+        <div class="grid" id="grid"></div>
+        <button id="next-level-btn" style="display: none; margin-top: 20px; padding: 10px 20px; background-color: #2196F3; color: white; border: none; border-radius: 5px; cursor: pointer;">
+            进入下一关
+        </button>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>
